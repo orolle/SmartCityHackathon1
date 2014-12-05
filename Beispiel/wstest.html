@@ -1,0 +1,39 @@
+<html>
+<head>
+
+<script type="text/javascript">
+
+	var mock = {};
+	mock.ws = {};
+	var crossroads =[];
+	
+	
+	
+	
+	mock.init = function() {
+		
+		ws = new WebSocket("ws://192.168.0.101:8282");
+
+		ws.onopen = function() {
+			console.log('connection established');
+		};
+
+		ws.onclose = function() {
+			console.log("connection closed!");            
+		};
+		
+		ws.onmessage = function(e) {
+		  console.log(e);
+		  alert(e);
+		}
+		
+	};
+
+
+</script>
+
+</head>
+<body onload='mock.init()'>
+
+</body>
+</html>
